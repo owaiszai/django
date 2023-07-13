@@ -1,0 +1,126 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'courses/css/common.css'%}">
+    
+    
+    
+    <title>Instructor Section</title>
+  </head>
+  <body>
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                  <div class="mb-4">
+                      <h1>Instructor Course Section</h1>
+                </div>
+                 <span class="mb-0 text-muted">
+                {% if msg %}
+                    {{ msg | safe }}
+                {% else %}
+                    Enter Course Details
+                {% endif %}
+              </span> 
+                <form  method="post">
+                    {% csrf_token %}
+                  
+                  <div class="form-group first">
+                    <label for="Course name">Title</label>
+                      
+                      {{ form.name}}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Slug">Slug</label>
+                      {{ form.slug }}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Detail</label>
+                      {{ form.description }}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Price</label>
+                      {{ form.price }}
+                  </div>
+                  <div class="form-group last mb-4">
+                    
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Discount</label>
+                      {{ form.discount}}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Thumbnail</label>
+                      {{ form.thumbnail}}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Resource</label>
+                      {{ form.resource}}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Lentgh</label>
+                      {{ form.length}}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Video_title</label>
+                      {{ form.title}}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">Lecture NO</label>
+                      {{ form.serial_number }}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="Course description">video_id</label>
+                      {{ form.video_id }}
+                  </div>
+                  
+                  <div class="d-flex mb-5 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">Active</span>
+                        {{ form.active}}
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div>
+                 
+
+                 <div class="d-flex mb-5 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">preview</span>
+                        {{ form.is_preview}}
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div>
+                    
+                  <input type="submit"  value="Create Course" class="btn btn-pill text-white btn-block btn-primary">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+    
+  </body>
+</html>
